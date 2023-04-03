@@ -1,0 +1,8 @@
+{
+  "message": {
+    "welcome": "Welcome back traveler."
+  },
+  "error": {
+    "general": "There is something wrong."
+  }
+}

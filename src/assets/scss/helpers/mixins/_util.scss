@@ -1,0 +1,64 @@
+@mixin anchor-pseudo($has-root: true) {
+  $root-selector: '';
+  @if $has-root == true {
+    $root-selector: '&,';
+  }
+  #{$root-selector} &:hover,
+  &:focus,
+  &:active,
+  &:visited,
+  &:focus:not(:active),
+  &:visited:not(:active) {
+    @content;
+  }
+}
+
+@mixin no-user-action {
+  user-select: none;
+  pointer-events: none;
+}
+
+@mixin webkit-scroll() {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin text-cut($width: 100%, $display: block) {
+  @if $width != none {
+    max-width: $width;
+  }
+  overflow: hidden;
+  display: $display;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin text-cut-lines($height: auto, $webkit-lines: 999) {
+  height: $height;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $webkit-lines;
+}
+
+@mixin first-children($n: 1) {
+  &:nth-of-type(-n + #{$n}) {
+    @content;
+  }
+}
+
+@mixin last-children($n: 1) {
+  &:nth-last-of-type(-n + #{$n}) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

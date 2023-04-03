@@ -1,0 +1,42 @@
+{
+  "cSpell.words": [
+    "axios",
+    "cacheable",
+    "classname",
+    "commitlint",
+    "compat",
+    "composables",
+    "gifsicle",
+    "importus",
+    "intlify",
+    "julr",
+    "mozjpeg",
+    "optipng",
+    "overscroll",
+    "pinia",
+    "pngquant",
+    "semibold",
+    "stylelint",
+    "tailwindcss",
+    "unplugin",
+    "vnode",
+    "vueuse"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "editor.tabSize": 2,
+  "i18n-ally.annotations": false,
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": ["src/locales"],
+  "prettier.arrowParens": "always",
+  "prettier.documentSelectors": ["**/*.svg"],
+  "prettier.trailingComma": "all",
+  "prettier.useTabs": false,
+  "scss.lint.unknownAtRules": "ignore",
+  "scss.validate": false,
+  "vite.autoStart": false,
+  "vite.port": 5173
+}

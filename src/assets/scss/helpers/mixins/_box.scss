@@ -1,0 +1,60 @@
+@mixin box($width, $height: $width, $display: block) {
+  width: $width;
+  height: $height;
+  display: $display;
+}
+
+@mixin box-pseudo($width, $height: $width, $content: '', $display: block) {
+  content: $content;
+  @include box($width, $height, $display);
+}
+
+@mixin rounded($all: auto, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  @if $all != auto {
+    border-radius: $all;
+  } @else if $top != auto {
+    border-top-left-radius: $top;
+    border-top-right-radius: $top;
+  } @else if $right != auto {
+    border-top-right-radius: $right;
+    border-bottom-right-radius: $right;
+  } @else if $bottom != auto {
+    border-bottom-left-radius: $bottom;
+    border-bottom-right-radius: $bottom;
+  } @else if $left != auto {
+    border-top-left-radius: $left;
+    border-bottom-left-radius: $left;
+  } @else {
+    border-radius: $border-radius-base;
+  }
+}
+
+@mixin rounded-half() {
+  border-radius: 50%;
+}
+
+@mixin rounded-full() {
+  border-radius: 9999px;
+}
+
+@mixin background($url: none, $color: none, $repeat: no-repeat, $position: center, $size: cover) {
+  @if $url != none {
+    $url: 'url(#{$url})';
+  }
+  @if $color == none {
+    $color: '';
+  }
+  background: #{$color} #{$url} $repeat $position / $size;
+}
+
+@mixin background-gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+
+  @if $orientation == 'vertical' {
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}

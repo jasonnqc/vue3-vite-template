@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .parent-fill {
+    @apply inset-0 h-full w-full;
+  }
+
+  .parent-center {
+    @apply left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .parent-center-x {
+    @apply left-1/2 -translate-x-1/2;
+  }
+
+  .parent-center-y {
+    @apply top-1/2 -translate-y-1/2;
+  }
+
+  .text-shadow-white {
+    text-shadow: 0 0 0.875rem #fff;
+  }
+}

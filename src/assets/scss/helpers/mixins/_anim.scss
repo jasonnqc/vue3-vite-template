@@ -1,0 +1,75 @@
+@mixin kf-rotate($name, $start: 0deg, $end: 360deg) {
+  @keyframes #{$name} {
+    from {
+      transform: rotate($start);
+    }
+
+    to {
+      transform: rotate($end);
+    }
+  }
+}
+
+@mixin kf-fade($name, $start: 0, $end: 1) {
+  @keyframes #{$name} {
+    0% {
+      opacity: $start;
+    }
+
+    100% {
+      opacity: $end;
+    }
+  }
+}
+
+@mixin kf-slide-x($name, $start: -20rem, $end: 0) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX($start) translateZ(0);
+    }
+
+    100% {
+      transform: translateX($end);
+    }
+  }
+}
+
+@mixin kf-slide-y($name, $start: -20rem, $end: 0) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateY($start) translateZ(0);
+    }
+
+    100% {
+      transform: translateY($end);
+    }
+  }
+}
+
+@mixin kf-slide-fade-x($name, $start: -20rem 0, $end: 0 1) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX(nth($start, 1)) translateZ(0);
+      opacity: nth($start, 2);
+    }
+
+    100% {
+      transform: translateX(nth($end, 1));
+      opacity: nth($end, 2);
+    }
+  }
+}
+
+@mixin kf-slide-fade-y($name, $start: -20rem 0, $end: 0 1) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateY(nth($start, 1)) translateZ(0);
+      opacity: nth($start, 2);
+    }
+
+    100% {
+      transform: translateY(nth($end, 1));
+      opacity: nth($end, 2);
+    }
+  }
+}

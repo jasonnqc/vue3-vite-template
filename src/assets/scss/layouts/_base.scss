@@ -1,0 +1,20 @@
+html,
+body {
+  @apply h-screen overscroll-none;
+}
+
+:root {
+  font-size: $font-size-base;
+}
+
+body {
+  @apply font-sans-extra;
+}
+
+#app {
+  @apply relative h-full;
+}
+
+p {
+  @apply font-sans;
+}

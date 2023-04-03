@@ -1,0 +1,104 @@
+@mixin position(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $z-index: 1,
+  $position: absolute,
+  $display: block
+) {
+  display: $display;
+  z-index: $z-index;
+  position: $position;
+
+  @if $top != auto {
+    top: $top;
+  }
+
+  @if $right != auto {
+    right: $right;
+  }
+
+  @if $bottom != auto {
+    bottom: $bottom;
+  }
+
+  @if $left != auto {
+    left: $left;
+  }
+}
+
+@mixin fixed($top: auto, $right: auto, $bottom: auto, $left: auto, $z-index: 1, $display: block) {
+  @include position($top, $right, $bottom, $left, $z-index, fixed, $display);
+}
+
+@mixin absolute(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $z-index: 1,
+  $display: block
+) {
+  @include position($top, $right, $bottom, $left, $z-index, absolute, $display);
+}
+
+@mixin parent-center(
+  $dir: all,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $z-index: 1,
+  $display: block,
+  $position: absolute
+) {
+  @if $dir == all {
+    transform: translate(-50%, -50%);
+    @include position(
+      $top: 50%,
+      $left: 50%,
+      $position: $position,
+      $z-index: $z-index,
+      $display: $display
+    );
+  }
+
+  @if $dir == x {
+    transform: translateX(-50%);
+    @include position(
+      $left: 50%,
+      $top: $top,
+      $bottom: $bottom,
+      $position: $position,
+      $z-index: $z-index,
+      $display: $display
+    );
+  }
+
+  @if $dir == y {
+    transform: translateY(-50%);
+    @include position(
+      $top: 50%,
+      $left: $left,
+      $right: $right,
+      $position: $position,
+      $z-index: $z-index,
+      $display: $display
+    );
+  }
+}
+
+@mixin parent-fill($z-index: 1, $display: block, $position: absolute) {
+  width: 100%;
+  height: 100%;
+  @include position(
+    $top: 0,
+    $right: 0,
+    $bottom: 0,
+    $left: 0,
+    $position: $position,
+    $z-index: $z-index,
+    $display: $display
+  );
+}

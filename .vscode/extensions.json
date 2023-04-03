@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "stylelint.vscode-stylelint",
+    "editorconfig.editorconfig",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "lokalise.i18n-ally",
+    "mikestead.dotenv",
+    "antfu.goto-alias",
+    "eamodio.gitlens",
+    "antfu.vite",
+    "Vue.volar"
+  ]
+}
